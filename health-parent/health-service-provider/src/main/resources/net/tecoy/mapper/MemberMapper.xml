@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.tecoy.mapper.MemberMapper">
+
+    <insert id="add" parameterType="net.tecoy.pojo.Member">
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+            select last_insert_id()
+        </selectKey>
+        insert into `t_member` (`fileNumber`, `name`, `sex`, `idCard`, `phoneNumber`, `regTime`, `password`, `email`,
+        `birthday`, `remark`)
+        values (#{fileNumber}, #{name}, #{sex}, #{idCard}, #{phoneNumber}, #{regTime}, #{password}, #{email},
+        #{birthday}, #{remark});
+    </insert>
+    <select id="selectAll" resultType="net.tecoy.pojo.Member">
+        select *
+        from `t_member`
+    </select>
+    <select id="selectById" resultType="net.tecoy.pojo.Member">
+        select *
+        from `t_member`
+        where `id` = #{id}
+    </select>
+    <select id="selectByTelephone" parameterType="string" resultType="net.tecoy.pojo.Member">
+        select *
+        from `t_member`
+        where `phoneNumber` = #{telephone}
+    </select>
+    <select id="countMemberByDate" resultType="java.lang.Integer">
+        select count(`id`)
+        from `t_member`
+        <where>
+            <if test="startTime != null">
+                and `regTime` &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and `regTime` &lt;= #{endTime}
+            </if>
+        </where>
+    </select>
+    <select id="countTotal" resultType="java.lang.Integer">
+        select count(*)
+        from `t_member`;
+    </select>
+</mapper>
