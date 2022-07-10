@@ -25,8 +25,8 @@ import java.io.UnsupportedEncodingException;
  * @author Tecoy
  */
 public class QiniuUtils {
-    private static String accessKey = "2MVNqOyrmIgGeFjVvy-d1lt4PlthRxdu7yeBEuEC";
-    private static String secretKey = "ZHahxLPYOKxXLOBO0Vh3xpvwWY8C8z_dHCDEKQ48";
+    private static String accessKey = "";
+    private static String secretKey = "";
     private static String bucket = "tecoy-net-space";
     private static String url = "rei1ffyyi.hn-bkt.clouddn.com/";
     private static UploadManager uploadManager;
