@@ -6,7 +6,7 @@
 
 **技术栈**
 
-主要技术栈: SSH + Zookeeper + Dubbo + Spring Secutity
+主要技术栈: SSH + Zookeeper + Dubbo + Spring Security
 
 详细: 
 
@@ -17,7 +17,7 @@
 
   - Zookeeper + Dubbo
 
-  - Spring Secutity
+  - Spring Security
   - POI
   - JasperReports
   - Quartz
@@ -91,7 +91,7 @@
 
 # `health-mobile`
 
-通过uartz定时清理七牛云存储的图片
+通过Quartz定时清理七牛云存储的图片
 
 
 
@@ -105,9 +105,9 @@
 
 
 
-# `Spring Secutity`详解
+# `Spring Security`详解
 
-通过Spring Secutity对后台信息管理人员进行权限控制
+通过Spring Security对后台信息管理人员进行权限控制
 
 - 导入依赖
 
